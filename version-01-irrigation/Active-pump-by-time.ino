@@ -1,20 +1,19 @@
-//-------- DEFINIÇÕES DO RELE --------
-//Porta ligada ao pino do rele
-const int RelayPin = 3;
+//-------- RELAY'S DEFINITIONS --------
+
+const int RelayPin = 3; //Relay's port pin
 
 //-------- DEFINIÇÕES PARA A BOMBA --------
-//Define que a variável que guarda o últimos segundos é 0
-unsigned long previousMillis = 0; 
-const long intervalOff = 3600000;
-const long intervalOn = 15000;
+
+unsigned long previousMillis = 0; //Defines that the variable with 0 seconds
+const long intervalOff = 3600000; //Defines the interval that the pump is OFF
+const long intervalOn = 15000; //Defines the interval that the pump is ON
 
 
 void setup(){
   Serial.begin(9600);
-  //Define o pino "ReleyPin" como saída
-  pinMode(RelayPin, OUTPUT);
-  //Estado inicial do rele
-  digitalWrite(RelayPin, HIGH);
+  pinMode(RelayPin, OUTPUT); //Defines 'RelayPin' like OUTPUT
+  digitalWrite(RelayPin, HIGH); //Defines 'RelayPin' start like OFF
+  
   Serial.println("Start ...");
 }
 
@@ -23,14 +22,14 @@ void loop(){
 
   if(currentMillis - previousMillis >= intervalOff){
 
-    previousMillis = currentMillis; //Registra o último milisegundos para ter como referência
+    previousMillis = currentMillis;
 
-    digitalWrite(RelayPin, LOW); //Liga o rele
-    Serial.println("Ligado");
-    delay(intervalOn); //Intervalo para manter o motor ligado
-    digitalWrite(RelayPin, HIGH); //Desliga o rele
-    Serial.println("Desligado");
+    digitalWrite(RelayPin, LOW); //Relay turn ON
+    Serial.println("On");
+    delay(intervalOn); //Pump on range
+    digitalWrite(RelayPin, HIGH);  //Relay turn OFF
+    Serial.println("Off");
   }
 
-  digitalWrite(RelayPin, HIGH); //Mantem o rele desligado
+  digitalWrite(RelayPin, HIGH); //Keep the pump off
 }
