@@ -3,56 +3,31 @@
 #define DHTPIN D3
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
-int umidade;
-int temperatura;
-
-// --- DISPLAY ---
-#include <Adafruit_SSD1306.h>
-
-#define SCREEN_WIDTH 128 //Defini a largura
-#define SCREEN_HEIGHT 64 //Defini a altura
-#define OLED_RESET LED_BUILTIN
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET); //Inclui as dimensoes
+int humidity;
+int temperature;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   dht.begin();
-  configurarDisplay();
-  
+  //configurarDisplay();
 }
 
 void loop() {
-  medirTemperaturaUmidade();
-  mostrarTemperaturaUmidade();
+  measureTemperatureHumidity();
+  showTemperatureHumidity();
+  delay(6000);
 }
 
-void configurarDisplay() {
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-  display.setTextColor(WHITE);
-  display.clearDisplay();
+void showTemperatureHumidity() {
+  Serial.print("Temperature ");
+  Serial.print(temperature);
+  Serial.print(" C -::- Humidity ");
+  Serial.print(humidity);
+  Serial.println(" %");
 }
 
-void mostrarMensagemNoDisplay(const char* texto1, int medicao, const char* texto2) {
-  display.clearDisplay();
-  display.setTextSize(1);
-  display.setCursor(0, 0);
-  display.print(texto1);
-  display.setTextSize(4);
-  display.setCursor(20, 20);
-  display.print(medicao);
-  display.setTextSize(2);
-  display.print(texto2);
-  display.display();
-  delay(2000);
-}
-
-void mostrarTemperaturaUmidade() {
-  mostrarMensagemNoDisplay("Temperatura", (temperatura), " C");
-  mostrarMensagemNoDisplay("Umidade", (umidade), " %");
-}
-
-void medirTemperaturaUmidade() {
-  umidade = dht.readHumidity();
-  temperatura = dht.readTemperature(false);
+void measureTemperatureHumidity() {
+  humidity = dht.readHumidity();
+  temperature = dht.readTemperature(false);
   delay(5000);
 }
