@@ -1,3 +1,5 @@
+# Understanding the project
+
 For study, learn and undertand Arduino I will try to developed a code for automatization my vegetable garden at home.
 
 With lean mindset, I to sliced the project in features. Look:
@@ -8,10 +10,12 @@ With lean mindset, I to sliced the project in features. Look:
 
 `Third stage` => Version 02 -> I will data (soil and air humidy and temperature) record in a data base using ESP32;
 
-`Fourth stage` => Version 03 -> I will use clean energy for powered the system;
+`Fourth stage` => Version 03 -> In this stage I will mix the version 01 and 02, the system will capture humidy (soil and air) record in data base, and identify if plats need or not water (irrigation);
 
-`Fifth stage` => Version 04 -> I would like to colected rain water to irrigate the plants;
+`Fifth stage` => Version 04 -> I will use clean energy for powered the system;
 
-`Sixth stage` => Version 05 -> I would like to automatization the home made pesticide's irrigation for control aphids and mealybugs;
+`Sixth stage` => Version 05 -> I would like to colected rain water to irrigate the plants;
 
-`Seventh stage`=> Version 06 -> I would like to automatization the fertilizer's irrigation;
+`Seventh stage`=> Version 06 -> I would like to automatization the home made pesticide's irrigation for control aphids and mealybugs;
+
+`Eighth stage`=> Version 07 -> I would like to automatization the fertilizer's irrigation;
