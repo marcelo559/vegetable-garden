@@ -10,4 +10,8 @@ Nothing better than cooking with fresh vegetables, which will be taken care of b
 
 I'm begin to study on the C++ and NodeMCU this year, so I'm developing small slice of code to testing and debug easily. This way, I developed a humidity and temperature controll on NodeMCU and soil humidy controll on Arduino One.
 
-Image with two diagrams :: 1. Arduino and 2. NodeMCU 
+<center>
+  <img src="https://github.com/marcelo559/vegetable-garden/blob/main/version-00-Sensors/humidity-temperature-sensor/draw-th-sensor-Vegetable-Garden-Version-00.jpg" />
+
+  <img src="https://github.com/marcelo559/vegetable-garden/blob/main/version-00-Sensors/soil-moisture-sensor/draw-soil-sensor-Vegetable-Garden-Version-00.jpg" />
+</center>
