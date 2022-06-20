@@ -4,7 +4,7 @@ For study, learn and undertand Arduino I will try to developed a code for automa
 
 With lean mindset, I to sliced the project in features. Look:
 
-`First stage` => Version 00 -> I developed two separated code. The Arduino One board I'm  use measure the soil humidy and the NodeMCU ESP32 board I use to mesure the temperature (degrees Celsius) and humity (%).
+`First stage` => Version 00 -> I developed two separated codes. The Arduino Uno board I'm use measure the soil humidy and the NodeMCU ESP32 board I use to measure the temperature (degrees Celsius) and humity (%).
 
 `Second stage` => Version 01 -> I'm developing the automatization of irrigation, each 24 hours I will irrigate plants using a pump;
 
