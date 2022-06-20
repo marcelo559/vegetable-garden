@@ -1,7 +1,7 @@
 //--- DEFINITIONS ABOUT THE PERIOD ---
 
 unsigned long previousMillis = 0; //Define that the variable is 0 seconds
-const long intervalOff = 6000; //Define the interval of period
+const long intervalOff = 21600000; //Define the interval of period equal 6H or 360min or 21.600sec
 
 void setup() {
   Serial.begin(9600);
@@ -9,7 +9,7 @@ void setup() {
 }
 
 void loop() {
-  delay(1500);
+  delay(3600000); //1H or 60min or 360seg
   
   unsigned long currentMillis = millis();
 
